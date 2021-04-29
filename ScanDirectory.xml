@@ -1,0 +1,253 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ScanDirectoryDemo</name>
+    </assembly>
+    <members>
+        <member name="T:ScanDirectoryDemo.ScanDirectoryDemoForm">
+            <summary>
+            Summary description for ScanDirectoryDemo
+            </summary>
+        </member>
+        <member name="F:ScanDirectoryDemo.ScanDirectoryDemoForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ScanDirectoryDemo.ScanDirectoryDemoForm.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ScanDirectoryDemo.ScanDirectoryDemoForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:ScanDirectoryDemo.ScanDirectoryDemoForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:ScanDirectoryDemo.ScanDirectoryDemoForm.Main">
+            <summary>
+            The main entry point for the application.
+            </summary>
+        </member>
+        <member name="M:ScanDirectoryDemo.ScanDirectoryDemoForm.buttonStart_Click(System.Object,System.EventArgs)">
+            <summary>
+            Handles the Click event of the buttonStart control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:ScanDirectoryDemo.ScanDirectoryDemoForm.ScanTheDirectories(System.String)">
+            <summary>
+            Scans the directories starting at the specified path.
+            </summary>
+            <param name="path">The path.</param>
+        </member>
+        <member name="M:ScanDirectoryDemo.ScanDirectoryDemoForm.buttonCancel_Click(System.Object,System.EventArgs)">
+            <summary>
+            Handles the Click event of the buttonCancel control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:ScanDirectoryDemo.ScanDirectoryDemoForm.scanDirectory_DirectoryEvent(System.Object,ScanDirectoryDemo.DirectoryEventArgs)">
+            <summary>
+            Handles the DirectoryEvent event of the scanDirectory control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:ScanDirectoryDemo.DirectoryEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:ScanDirectoryDemo.ScanDirectoryDemoForm.scanDirectory_FileEvent(System.Object,ScanDirectoryDemo.FileEventArgs)">
+            <summary>
+            Handles the FileEvent event of the scanDirectory control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:ScanDirectoryDemo.FileEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:ScanDirectoryDemo.ScanDirectoryDemoForm.UpdatePanel(System.String)">
+            <summary>
+            Updates the panel with the specified text and calls the Application.DoEvents to make
+            sure the form is updated.
+            </summary>
+            <param name="text">The text to be displayed.</param>
+        </member>
+        <member name="T:ScanDirectoryDemo.ScanDirectoryAction">
+            <summary>
+            Defines the action on a directory which triggered the event
+            </summary>
+        </member>
+        <member name="F:ScanDirectoryDemo.ScanDirectoryAction.Enter">
+            <summary>
+            Enter a directory
+            </summary>
+        </member>
+        <member name="F:ScanDirectoryDemo.ScanDirectoryAction.Leave">
+            <summary>
+            Leave a directory
+            </summary>
+        </member>
+        <member name="T:ScanDirectoryDemo.FileEventArgs">
+            <summary>
+            Information about the file in the current directory.
+            </summary>
+        </member>
+        <member name="M:ScanDirectoryDemo.FileEventArgs.#ctor">
+            <summary>
+            Block the default constructor.
+            </summary>
+        </member>
+        <member name="M:ScanDirectoryDemo.FileEventArgs.#ctor(System.IO.FileInfo)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ScanDirectoryDemo.DirectoryEventArgs"/> class.
+            </summary>
+            <param name="fileInfo"><see cref="T:System.IO.FileInfo"/> object for the current file.</param>
+        </member>
+        <member name="P:ScanDirectoryDemo.FileEventArgs.Info">
+            <summary>
+            Gets the current file information.
+            </summary>
+            <value>The <see cref="T:System.IO.FileInfo"/> object for the current file.</value>
+        </member>
+        <member name="P:ScanDirectoryDemo.FileEventArgs.Cancel">
+            <summary>
+            Gets or sets a value indicating whether to cancel the directory scan.
+            </summary>
+            <value>
+            <see langword="true"/> if the scan must be cancelled; otherwise, <see langword="false"/>.
+            </value>
+        </member>
+        <member name="T:ScanDirectoryDemo.DirectoryEventArgs">
+            <summary>
+            Event arguments for the DirectoryEvent
+            </summary>
+        </member>
+        <member name="M:ScanDirectoryDemo.DirectoryEventArgs.#ctor">
+            <summary>
+            Block the default constructor.
+            </summary>
+        </member>
+        <member name="M:ScanDirectoryDemo.DirectoryEventArgs.#ctor(System.IO.DirectoryInfo,ScanDirectoryDemo.ScanDirectoryAction)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ScanDirectoryDemo.DirectoryEventArgs"/> class.
+            </summary>
+            <param name="directory"><see cref="T:System.IO.DirectoryInfo"/> object for the current path.</param>
+            <param name="action">The action.</param>
+        </member>
+        <member name="P:ScanDirectoryDemo.DirectoryEventArgs.Info">
+            <summary>
+            Gets the current directory information.
+            </summary>
+            <value>The <see cref="T:System.IO.DirectoryInfo"/> object for the current directory.</value>
+        </member>
+        <member name="P:ScanDirectoryDemo.DirectoryEventArgs.Action">
+            <summary>
+            Gets the current directory action.
+            </summary>
+            <value>The <see cref="T:ScanDirectoryDemo.ScanDirectoryAction"/> action value.</value>
+        </member>
+        <member name="P:ScanDirectoryDemo.DirectoryEventArgs.Cancel">
+            <summary>
+            Gets or sets a value indicating whether to cancel the directory scan.
+            </summary>
+            <value>
+            <see langword="true"/> if the scan must be cancelled; otherwise, <see langword="false"/>.
+            </value>
+        </member>
+        <member name="T:ScanDirectoryDemo.ScanDirectory">
+            <summary>
+            Scan directory trees
+            </summary>
+        </member>
+        <member name="M:ScanDirectoryDemo.ScanDirectory.RaiseFileEvent(System.IO.FileInfo)">
+            <summary>
+            Raises the file event.
+            </summary>
+            <param name="fileInfo"><see cref="T:System.IO.FileInfo"/> object for the current file.</param>
+        </member>
+        <member name="M:ScanDirectoryDemo.ScanDirectory.RaiseDirectoryEvent(System.IO.DirectoryInfo,ScanDirectoryDemo.ScanDirectoryAction)">
+            <summary>
+            Raises the directory event.
+            </summary>
+            <param name="directory"><see cref="T:System.IO.DirectoryInfo"/> object for the current path.</param>
+            <param name="action">The <see cref="T:ScanDirectoryDemo.ScanDirectoryAction"/> action value.</param>
+            <returns><see langword="true"/> when the scan is allowed to continue. <see langword="false"/> if otherwise;</returns>
+        </member>
+        <member name="M:ScanDirectoryDemo.ScanDirectory.WalkDirectory(System.String)">
+            <summary>
+            Walks the specified path.
+            </summary>
+            <param name="path">The path.</param>
+            <returns><see langword="true"/> when the scan finished without being interupted. <see langword="false"/> if otherwise;</returns>
+        </member>
+        <member name="M:ScanDirectoryDemo.ScanDirectory.WalkDirectory(System.IO.DirectoryInfo)">
+            <summary>
+            Walks the specified directory.
+            </summary>
+            <param name="directory"><see cref="T:System.IO.DirectoryInfo"/> object for the current path.</param>
+            <returns><see langword="true"/> when the scan finished without being interupted. <see langword="false"/> if otherwise;</returns>
+        </member>
+        <member name="M:ScanDirectoryDemo.ScanDirectory.ProcessDirectory(System.IO.DirectoryInfo,ScanDirectoryDemo.ScanDirectoryAction)">
+            <summary>
+            Processes the directory.
+            </summary>
+            <param name="directoryInfo">The directory info.</param>
+            <param name="action">The action.</param>
+            <returns><see langword="true"/> when the scan is allowed to continue. <see langword="false"/> if otherwise;</returns>
+        </member>
+        <member name="M:ScanDirectoryDemo.ScanDirectory.ProcessFile(System.IO.FileInfo)">
+            <summary>
+            Processes the file.
+            </summary>
+            <param name="fileInfo">The file info.</param>
+            <returns><see langword="true"/> when the scan is allowed to continue. <see langword="false"/> if otherwise;</returns>
+        </member>
+        <member name="M:ScanDirectoryDemo.ScanDirectory.WalkDirectories(System.IO.DirectoryInfo)">
+            <summary>
+            Walks the directory tree starting at the specified directory.
+            </summary>
+            <param name="directory"><see cref="T:System.IO.DirectoryInfo"/> object for the current directory.</param>
+            <returns><see langword="true"/> when the scan is allowed to continue. <see langword="false"/> if otherwise;</returns>
+        </member>
+        <member name="M:ScanDirectoryDemo.ScanDirectory.WalkFilesInDirectory(System.IO.DirectoryInfo)">
+            <summary>
+            Walks the directory tree starting at the specified path.
+            </summary>
+            <param name="directory"><see cref="T:System.IO.DirectoryInfo"/> object for the current path.</param>
+            <returns><see langword="true"/> when the scan was cancelled. <see langword="false"/> if otherwise;</returns>
+        </member>
+        <member name="E:ScanDirectoryDemo.ScanDirectory.FileEvent">
+            <summary>
+            Event is raised for each file in a directory.
+            </summary>
+        </member>
+        <member name="E:ScanDirectoryDemo.ScanDirectory.DirectoryEvent">
+            <summary>
+            Event is raised for each directory.
+            </summary>
+        </member>
+        <member name="P:ScanDirectoryDemo.ScanDirectory.SearchPattern">
+            <summary>
+            Gets or sets the search pattern.
+            </summary>
+            <example>
+            You can specify more than one seach pattern
+            </example>
+            <value>The search pattern.</value>
+        </member>
+        <member name="T:ScanDirectoryDemo.ScanDirectory.FileEventHandler">
+            <summary>
+            Definition for the FileEvent.
+            </summary>
+        </member>
+        <member name="T:ScanDirectoryDemo.ScanDirectory.DirectoryEventHandler">
+            <summary>
+            Definition for the DirectoryEvent.
+            </summary>
+        </member>
+    </members>
+</doc>
